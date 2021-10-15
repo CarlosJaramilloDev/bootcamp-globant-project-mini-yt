@@ -1,0 +1,35 @@
+{{>header}}
+    <link rel="stylesheet" href="./css/main.css">
+    <title></title>
+</head>
+<body>
+    {{>menu}}
+
+    <div class="container-fluid px-5 mt-4">
+        <div class="row mt-4 text-center alert alert-info p-1">
+            <h4 id="query"></h4>
+        </div>
+        <hr>
+        <div class="row videos-container">
+            
+        </div>
+    </div>
+    <template>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 p-2">
+            <a href="" class="btn-light btn-video" id="videolink">
+                <div class="ratio ratio-16x9">
+                    <video src="" id="video">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="playpause"></div>
+                </div>
+                <h6 class="mt-1 mb-0" id="title"></h6>
+                <small id="time"></small>
+            </a>
+        </div>
+    </template>
+
+    {{>footer}}
+    <script src="./js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{{>header}}
+    <link rel="stylesheet" href="./css/main.css">
+    <title>CSJI Youtube</title>
+</head>
+<body>
+    {{>menu}}
+
+    <div class="container-fluid px-5 mt-4">
+        <div class="row">
+            <div class="alert alert-warning mb-3 d-none text-center" role="alert" id="msg">
+                Loading...
+            </div>
+        </div>
+        <div class="row videos-container">
+        </div>
+    </div>
+
+    <template>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 p-2 mb-3">
+            <a href="" class="btn-light btn-video" id="videolink">
+                <div class="ratio ratio-16x9">
+                    <video src="" id="video">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="playpause"></div>
+                </div>
+                <h6 class="mt-1 mb-0" id="title"></h6>
+                <small id="time"></small>
+            </a>
+        </div>
+    </template>
+
+    {{>footer}}
+    <script src="./js/index.js"></script>
+</body>
+</html>
