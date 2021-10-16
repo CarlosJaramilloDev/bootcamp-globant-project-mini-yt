@@ -13,7 +13,17 @@ var storage = multer.diskStorage({
     }
 })
 
-const upload = multer({ storage, limits: {
+const upload = multer({ 
+    storage, 
+    fileFilter: (req, file, cb) => {
+        if (file.mimetype == "video/mp4" || file.mimetype == "video/mpg" || file.mimetype == "video/mpeg") {
+          cb(null, true);
+        } else {
+          cb(null, false);
+          return cb(new Error('Only .mp4, .mpg and .mpeg format allowed!'));
+        }
+    },
+    limits: {
     fileSize: 150000000
 }})
 
@@ -77,10 +87,13 @@ router.patch('/videos/:id/:op', async (req, res) => {
             return res.status(400).send("Unrecognized operation")
         }
         const video = await Video.findById(req.params.id)
+        if(!video){
+            return res.status(404).send("Video not found")
+        }
         video[op] ++
         await video.save() 
         if(!video){
-            return res.status(404).send({error: "Video not found"})
+            return res.status(404).send({error: "Video not saved"})
         }
         res.send(video)
     } catch (error) {
