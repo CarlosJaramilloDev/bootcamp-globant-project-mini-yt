@@ -1,0 +1,25 @@
+.btn-video{
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: .25rem;
+}
+
+.playpause {
+    background-image:url(https://farodemocratico.juridicas.unam.mx/wp-content/uploads/2020/01/Video_Mesa-de-trabajo-1.png);
+    background-repeat:no-repeat;
+    width:25%;
+    height:25%;
+    position:absolute;
+    left:0%;
+    right:0%;
+    top:0%;
+    bottom:0%;
+    margin:auto;
+    background-size:contain;
+    background-position: center;
+}
+
+video{
+    border-radius: 10px;
+}
